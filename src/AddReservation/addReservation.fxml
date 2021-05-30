@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap" prefHeight="600.0" prefWidth="700" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddReservation.AddReservationController">
+    <children>
+        <ComboBox fx:id="type_reservation_combobox" layoutX="350.0" layoutY="110.0" prefHeight="26.0" prefWidth="174.0" />
+        <Label layoutX="146.0" layoutY="108.0" text="Type reservation:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label layoutX="212.0" layoutY="36.0" text="Client:">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font></Label>
+        <RadioButton fx:id="existing_client_radiobutton" layoutX="299.0" layoutY="28.0" mnemonicParsing="false" onAction="#existing_client_radiobutton_on_action" text="Existing client">
+            <toggleGroup>
+                <ToggleGroup fx:id="group2" />
+            </toggleGroup>
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </RadioButton>
+        <RadioButton fx:id="new_client_radiobutton" layoutX="299.0" layoutY="65.0" mnemonicParsing="false" onAction="#new_client_radiobutton_on_action" text="New client" toggleGroup="$group2">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font></RadioButton>
+        <ComboBox fx:id="clients_combobox" layoutX="454.0" layoutY="26.0" prefWidth="150.0" />
+        <Label layoutX="127.0" layoutY="159.0" text="Date of reservation:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <DatePicker fx:id="date_reservation" layoutX="350.0" layoutY="162.0" />
+        <DatePicker fx:id="arrival_date" layoutX="350.0" layoutY="210.0" />
+        <DatePicker fx:id="departure_date" layoutX="350.0" layoutY="260.0" />
+        <Label layoutX="196.0" layoutY="207.0" text="Arrival date:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label layoutX="168.0" layoutY="257.0" text="Departure date:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label layoutX="92.0" layoutY="440.0" text="Rooms:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Button fx:id="create_button" layoutX="299.0" layoutY="322.0" mnemonicParsing="false" onAction="#create_button_on_action" text="CREATE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="add_room_button" layoutX="548.0" layoutY="436.0" mnemonicParsing="false" onAction="#add_room_button_on_action" prefHeight="39.0" prefWidth="113.0" text="Add room">
+            <font>
+                <Font name="System Bold" size="17.0" />
+            </font></Button>
+        <ComboBox fx:id="type_rooms_combobox" layoutX="205.0" layoutY="443.0" onAction="#type_rooms_combobox_on_action" prefWidth="150.0" />
+        <ComboBox fx:id="rooms_combobox" layoutX="372.0" layoutY="443.0" prefWidth="150.0" />
+        <Button fx:id="save_button" layoutX="288.0" layoutY="517.0" mnemonicParsing="false" onAction="#save_button_on_action" prefHeight="39.0" prefWidth="104.0" text="SAVE">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Button>
+    </children>
+</AnchorPane>
