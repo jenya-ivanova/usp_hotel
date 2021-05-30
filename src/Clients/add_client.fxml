@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Clients.AddClientController"> <children>
+    <TextField fx:id="name_textfield" layoutX="302.0" layoutY="114.0" promptText="Enter name:">
+        <font>
+            <Font name="System Bold" size="17.0" />
+        </font></TextField>
+    <TextField fx:id="address_textfield" layoutX="302.0" layoutY="193.0" promptText="Enter address:">
+        <font>
+            <Font name="System Bold" size="17.0" />
+        </font></TextField>
+    <TextField fx:id="phone_textfield" layoutX="302.0" layoutY="273.0" promptText="Enter phone:">
+        <font>
+            <Font name="System Bold" size="17.0" />
+        </font></TextField>
+    <Button fx:id="add_button" layoutX="262.0" layoutY="390.0" mnemonicParsing="false" onAction="#add_button_on_action" prefHeight="50.0" prefWidth="120.0" text="ADD">
+        <font>
+            <Font name="System Bold" size="23.0" />
+        </font>
+    </Button>
+    <Label layoutX="198.0" layoutY="118.0" text="Name:">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font></Label>
+    <Label layoutX="181.0" layoutY="197.0" text="Address:">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font></Label>
+    <Label layoutX="196.0" layoutY="280.0" text="Phone:">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font></Label>
+</children>
+
+</AnchorPane>

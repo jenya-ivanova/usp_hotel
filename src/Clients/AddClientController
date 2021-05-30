@@ -1,0 +1,88 @@
+package Clients;
+
+import Login.LoginController;
+import dbUtil.SQL;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundSize;
+import javafx.stage.Stage;
+import javax.swing.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import static javafx.scene.layout.BackgroundPosition.CENTER;
+import static javafx.scene.layout.BackgroundRepeat.NO_REPEAT;
+
+public class AddClientController {
+    @FXML
+    private TextField name_textfield;
+    @FXML
+    private TextField address_textfield;
+    @FXML
+    private TextField phone_textfield;
+    @FXML
+    private Button add_button;
+    @FXML
+    private AnchorPane ap;
+
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+
+    public void initialize() throws IOException {
+        Image image1 = new Image(new FileInputStream("C:/Users/HP/Pictures/hotel/babyblue.jpg"));
+        BackgroundSize backgroundSize = new BackgroundSize(1.0, 1.0, true, true, false, false);
+        ap.setBackground(new Background(new BackgroundImage(image1,NO_REPEAT, NO_REPEAT, CENTER, backgroundSize)));
+    }
+
+    public void add_button_on_action(ActionEvent event){
+        if(name_textfield.getText().isEmpty() || address_textfield.getText().isEmpty() || phone_textfield.getText().isEmpty()){
+            alert.setTitle("Input Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Fields can not be empty!");
+            alert.showAndWait();
+        }
+        else if(!name_textfield.getText().matches("^[a-zA-Z ]+$")){
+            alert.setTitle("Input Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Name must contain only letters!");
+            alert.showAndWait();
+        }
+        else if(!address_textfield.getText().matches("^[a-zA-Z0-9 ]+$")){
+            alert.setTitle("Input Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Address must contain only letters and numbers!");
+            alert.showAndWait();
+        }
+        else if(!phone_textfield.getText().matches("^[0-9+]+$")){
+            alert.setTitle("Input Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Phone must contain only numbers and '+' !");
+            alert.showAndWait();
+        }
+        else{
+            String name_client = name_textfield.getText();
+            String address_client = address_textfield.getText();
+            String phone_client = phone_textfield.getText();
+
+            String insert_client="Insert into clients(name_client, address_client, phone_client) values ('" + name_client + "','" + address_client + "','" + phone_client + "')";
+
+            if (SQL.insertSQL(insert_client)) {
+                JOptionPane.showMessageDialog(null, "Client added successfully!");
+                LoginController.client.setName_client(name_client);
+                LoginController.client.setAddress_client(address_client);
+                LoginController.client.setPhone_client(phone_client);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "There was an error! Please try again!");
+            }
+
+            Stage stage = (Stage) add_button.getScene().getWindow();
+            stage.close();
+        }
+    }
+}
