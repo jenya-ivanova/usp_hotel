@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Reservations.ViewArrivalsController">
+    <children>
+        <TableView fx:id="reservations_tableview" layoutX="6.0" layoutY="9.0" prefHeight="600.0" prefWidth="980.0" />
+        <Button fx:id="checkin_button" layoutX="225.0" layoutY="628.0" mnemonicParsing="false" onAction="#checkin_button_on_action" text="CHECK IN">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="cancel_button" layoutX="552.0" layoutY="628.0" mnemonicParsing="false" onAction="#cancel_button_on_action" text="CANCEL">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>
