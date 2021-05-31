@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ap" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExtraServices.AddExtraServiceController">
+    <children>
+        <ComboBox fx:id="clients_combobox" layoutX="300.0" layoutY="58.0" onAction="#clients_combobox_on_action" prefHeight="30.0" prefWidth="158.0" promptText="Choose client:" />
+        <Label layoutX="218.0" layoutY="58.0" text="Client:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <Label layoutX="131.0" layoutY="125.0" text="Reservation №:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <ComboBox fx:id="reservations_combobox" layoutX="300.0" layoutY="125.0" onAction="#reservations_combobox_on_action" prefHeight="30.0" prefWidth="158.0" promptText="Choose №:" />
+        <Label layoutX="142.0" layoutY="191.0" text="Extra Services:">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <ComboBox fx:id="extra_services_combobox" layoutX="300.0" layoutY="191.0" prefHeight="30.0" prefWidth="158.0" promptText="Choose service:" />
+        <Button fx:id="add_button" layoutX="226.0" layoutY="283.0" mnemonicParsing="false" onAction="#add_button_on_action" prefHeight="46.0" prefWidth="117.0" text="ADD">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>
