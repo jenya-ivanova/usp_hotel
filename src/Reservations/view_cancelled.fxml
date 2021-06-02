@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Reservations.ViewCancelledController"
+            prefHeight="700.0" prefWidth="1000.0">
+    <children>
+        <TableView fx:id="reservations_tableview" layoutX="9.0" layoutY="4.0" prefHeight="610.0" prefWidth="982.0" />
+        <Button fx:id="undo_cancel_button" layoutX="394.0" layoutY="639.0" mnemonicParsing="false" onAction="#undo_cancel_button_on_action" prefHeight="46.0" prefWidth="224.0" text="UNDO CANCEL">
+            <font>
+                <Font name="System Bold" size="21.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>
